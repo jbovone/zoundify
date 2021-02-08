@@ -3,10 +3,11 @@ import { css } from "@emotion/css";
 import MainButton from "../MainButton";
 import Dropdown from "../Dropdown";
 import User from "../svg/User";
+import Slider from "../svg/Slider";
 import ButtonIcon from "../ButtonIcon";
 import StyledInput from "../StyledInput";
 import SliderPanel from "../SliderPanel";
-import SliderControl from "../SliderControl";
+import Button from "../normalizers/button";
 
 const style = css({
   height: "7vh",
@@ -38,7 +39,9 @@ const Header = () => {
       <span>
         <MainButton title="upgrade" />
         <ButtonIcon title="Julian Bovone" Icon={User} active={true} />
-        <SliderControl />
+        <Button>
+          <Slider />
+        </Button>
       </span>
     </nav>
   );

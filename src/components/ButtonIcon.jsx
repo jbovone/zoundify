@@ -12,7 +12,7 @@ const ButtonIcon = ({ title, Icon, active, setActive, size = sizes.p }) => {
     display: "flex",
     alignItems: "center",
     "img, svg": {
-      margin: "0 8px",
+      marginRight: "10px",
     },
     span: {
       fontWeight: "bold",

@@ -14,11 +14,12 @@ import { sizes } from "../theme/sizing";
 const style = css({
   position: "relative",
   "&>*": {
-    margin: "54px 7px",
+    margin: "35px 7px",
   },
   section: {
     "&>*": {
-      margin: "10px 7px",
+      margin: "10px 17px",
+      padding: "2px 0",
     },
   },
   ".title": {
@@ -26,10 +27,11 @@ const style = css({
   },
   div: {
     position: "absolute",
-    bottom: 50,
+    bottom: "-15px",
+    left: 10,
     borderTop: `solid 1px ${palette.backgroundMain}`,
     width: "90%",
-    paddingTop: "10px",
+    paddingTop: "13px",
   },
 });
 

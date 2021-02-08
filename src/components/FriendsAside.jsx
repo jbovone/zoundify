@@ -17,6 +17,9 @@ const style = css({
   "& > *": {
     margin: "20px 10px",
   },
+  "@media (max-width: 1100px)": {
+    display: "none",
+  },
 });
 
 const FriendsAside = () => {

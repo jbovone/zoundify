@@ -4,7 +4,7 @@ import { palette } from "../../theme/colors";
 const Main = styled.main({
   background: palette.backgroundBody,
   color: palette.fontSecondary,
-  minHeight: "100vh",
+  height: "91vh",
   width: "100vw",
   display: "flex",
   alignItems: "stretch",

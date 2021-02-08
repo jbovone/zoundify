@@ -1,5 +1,4 @@
 const axios = require("axios");
-const fs = require("fs");
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
@@ -23,24 +22,29 @@ function getSpotifyToken() {
     .catch(() => false);
 }
 
-function browseSpotify(token) {
-  const endpoints = ["featured-playlists"];
-  console.log(token);
-  return axios({
-    method: "get",
-    url: `https://api.spotify.com/v1/browse/new-releases`,
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Authorization: Bearer ${token}`,
-    },
-    params: {
-      grant_type: "client_credentials",
-    },
-    json: true,
-  })
-    .then((res) => fs.writeFileSync("./data.json", JSON.stringify(res.data)))
-    .catch(() => false);
+async function browseSpotify(token) {
+  return await Promise.all(
+    ["featured-playlists", "new-releases"].map((endpoint) =>
+      axios({
+        method: "get",
+        url: `https://api.spotify.com/v1/browse/${endpoint}`,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Authorization: Bearer ${token}`,
+        },
+        params: {
+          grant_type: "client_credentials",
+        },
+        json: true,
+      })
+        .then((res) => {
+          res.data.title = endpoint.replace("-", " ");
+          return res.data;
+        })
+        .catch(() => false)
+    )
+  );
 }
 
 module.exports = { getSpotifyToken, browseSpotify };

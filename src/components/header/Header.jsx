@@ -7,6 +7,7 @@ const style = css({
     margin: "auto",
     width: "100%",
   },
+  paddingBottom: 25,
 });
 
 const Header = () => {
