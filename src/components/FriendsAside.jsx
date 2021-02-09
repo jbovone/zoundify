@@ -1,19 +1,21 @@
 import React from "react";
 import Aside from "./normalizers/aside";
-import background01 from "../assets/aside-friends-background-01.svg";
-import background02 from "../assets/aside-friends-background-02.svg";
+import ReziseBar from "./ReziseBar";
+import background from "../assets/friends-background.svg";
 import HighLight from "./normalizers/typography/highlighted";
 import MainButton from "./MainButton";
 import { css } from "@emotion/css";
 import { sizes } from "../theme/sizing";
+import useResize from "../hooks/useResize";
 
 const style = css({
   display: "flex",
+  position: "relative",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  background: `url("${background01}") bottom no-repeat, url("${background02}") top no-repeat`,
-  backgroundSize: "contain",
+  background: `url("${background}") bottom no-repeat`,
+  backgroundSize: "cover",
   "& > *": {
     margin: "20px 10px",
   },
@@ -23,10 +25,12 @@ const style = css({
 });
 
 const FriendsAside = () => {
+  const [width, setWidth] = useResize(240);
   return (
-    <Aside className={style}>
+    <Aside width={width} className={style}>
       <HighLight size={sizes.h2}>See what your friends are playing</HighLight>
       <MainButton title="FIND FRIENDS" />
+      <ReziseBar setWidth={setWidth} left />
     </Aside>
   );
 };

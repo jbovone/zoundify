@@ -6,7 +6,7 @@ import Article from "./Article";
 import { palette } from "../theme/colors";
 import SliderPanel from "./SliderPanel";
 
-const Slider = ({ title, articles }) => {
+const SliderViewer = ({ title, articles }) => {
   const articleRef = useRef();
   const containerRef = useRef();
 
@@ -17,6 +17,7 @@ const Slider = ({ title, articles }) => {
     overflowX: "hidden",
     width: "90%",
     margin: "auto",
+    paddingBottom: 20,
     header: {
       display: "flex",
       justifyContent: "space-between",
@@ -92,4 +93,4 @@ const Slider = ({ title, articles }) => {
   );
 };
 
-export default Slider;
+export default SliderViewer;

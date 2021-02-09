@@ -22,7 +22,7 @@ const Radio = ({ active, hover }) => {
             stroke={
               active ? fontHighlight : hover ? fontHighlight : fontSecondary
             }
-            stroke-width="2"
+            stroke-width={active ? 3 : 2}
           />
           <circle
             id="Ellipse 4"
@@ -32,17 +32,16 @@ const Radio = ({ active, hover }) => {
             stroke={
               active ? fontHighlight : hover ? fontHighlight : fontSecondary
             }
-            stroke-width="2"
+            stroke-width={active ? 3 : 2}
           />
           <circle
             id="Ellipse 5"
             cx="16"
             cy="16"
             r="3"
-            fill={
-              active ? fontHighlight : hover ? fontHighlight : fontSecondary
-            }
-            stroke-width="2"
+            fill={active ? fontHighlight : hover && fontHighlight}
+            stroke-width={active ? 3 : 2}
+            stroke={active ? fontHighlight : fontSecondary}
           />
         </g>
         <path

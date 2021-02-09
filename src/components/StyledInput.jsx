@@ -8,7 +8,6 @@ const style = css({
   background: "white",
   display: "flex",
   alignItems: "center",
-  minWidth: 140,
 
   img: {
     width: 20,
@@ -20,8 +19,8 @@ const style = css({
     height: 20,
     padding: "13px 0",
     outline: "none",
-    marginLeft: "5px",
-    width: "120px",
+    margin: "0 8px",
+    width: "160px",
   },
 });
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { palette } from "../../theme/colors";
 
-const Home = ({ hover, active }) => {
+const Plus = ({ hover }) => {
   const { fontSecondary, fontHighlight } = palette;
   return (
     <svg
@@ -24,4 +24,4 @@ const Home = ({ hover, active }) => {
   );
 };
 
-export default Home;
+export default Plus;

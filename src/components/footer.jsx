@@ -4,11 +4,20 @@ import { palette } from "../theme/colors";
 import Play from "./svg/Play";
 import Next from "./svg/Next";
 import Skip15 from "./svg/Skip15";
+import Slider from "./SliderControl";
+import Volume from "./svg/Volume";
+import Queque from "./svg/Queque";
+import Devices from "./svg/Devices";
 
+const flex = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
 const style = css({
   background: palette.backgroundFooter,
   width: "100%",
-  height: "9.5vh",
+  height: "10vh",
   position: "fixed",
   bottom: 0,
   borderTop: "1px solid black",
@@ -16,31 +25,44 @@ const style = css({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+  zIndex: 10000,
+
+  ".panel": {
+    "&>*": {
+      cursor: "pointer",
+    },
+    img: {
+      height: "60px",
+      margin: 10,
+    },
+  },
   ".center-panel": {
     span: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      "&>*": {
-        margin: "0 10px",
-        cursor: "pointer",
-      },
+      ...flex,
       marginBottom: 10,
+      ">*": {
+        margin: "0 10px",
+      },
     },
-    div: {
-      width: "40vw",
-      height: 4,
-      borderRadius: 30,
-      backgroundColor: "#444444",
-      margin: "6px",
+  },
+  ".right-panel": {
+    ...flex,
+    marginRight: 20,
+    ">*": {
+      margin: "0 5px",
     },
   },
 });
 const Footer = () => {
   return (
     <footer className={style}>
-      <section></section>
-      <section className="center-panel">
+      <section className="panel">
+        <img
+          src="https://i.scdn.co/image/ab67706f00000003a8f6984bc0b9ffe3272bb614"
+          alt=""
+        />
+      </section>
+      <section className="panel center-panel">
         <span>
           <Skip15 invertHeading />
           <Next invertHeading />
@@ -48,9 +70,14 @@ const Footer = () => {
           <Next />
           <Skip15 />
         </span>
-        <div></div>
+        <Slider width="40vw" />
       </section>
-      <section></section>
+      <section className="panel right-panel">
+        <Devices />
+        <Queque />
+        <Volume />
+        <Slider width="80px" />
+      </section>
     </footer>
   );
 };

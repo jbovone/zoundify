@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Aside from "./normalizers/aside";
-import Highlighted from "./normalizers/typography/highlighted";
+import ReziseBar from "./ReziseBar";
 import ButtonIcon from "./ButtonIcon";
 import Browse from "./svg/Browse";
 import Home from "./svg/Home";
@@ -9,29 +9,29 @@ import Plus from "./svg/Plus";
 import { css } from "@emotion/css";
 import Lead from "../components/normalizers/typography/lead";
 import { palette } from "../theme/colors";
-import { sizes } from "../theme/sizing";
+import useResize from "../hooks/useResize";
 
 const style = css({
   position: "relative",
+  paddingTop: "33px",
   "&>*": {
     margin: "35px 7px",
   },
   section: {
     "&>*": {
-      margin: "10px 17px",
+      margin: "12px 17px",
       padding: "2px 0",
     },
   },
   ".title": {
     alignSelf: "stretch",
   },
-  div: {
+  ".aside-playlist": {
     position: "absolute",
-    bottom: "-15px",
-    left: 10,
+    width: "100%",
+    padding: 5,
+    bottom: "0",
     borderTop: `solid 1px ${palette.backgroundMain}`,
-    width: "90%",
-    paddingTop: "13px",
   },
 });
 
@@ -56,6 +56,7 @@ const mainNav = [
 
 const AsideNavigator = (/*handleDispatch*/) => {
   const [active, setActive] = useState(mainNav);
+  const [width, setWidth] = useResize(240);
 
   function handleActiveBtn(activeItem) {
     const newState = active.map((btn) => {
@@ -70,8 +71,7 @@ const AsideNavigator = (/*handleDispatch*/) => {
   }
 
   return (
-    <Aside className={style}>
-      <Highlighted size={sizes.h1}>...</Highlighted>
+    <Aside className={style} width={width}>
       <section>
         {mainNav.map((btn, i) => {
           const { title, Component } = btn;
@@ -81,6 +81,7 @@ const AsideNavigator = (/*handleDispatch*/) => {
               Icon={Component}
               setActive={handleActiveBtn}
               active={active[i].active}
+              decorator={true}
             />
           );
         })}
@@ -97,9 +98,10 @@ const AsideNavigator = (/*handleDispatch*/) => {
       <section>
         <Lead className="title">Playlists</Lead>
       </section>
-      <div>
+      <section className="aside-playlist">
         <ButtonIcon title="New Playlist" Icon={Plus} variant="normal" />
-      </div>
+      </section>
+      <ReziseBar setWidth={setWidth} right />
     </Aside>
   );
 };

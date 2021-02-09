@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/css";
-import HeaderNavigation from "./HeaderNavigation";
-import add from "../../assets/mock-add.png";
+import add from "../assets/mock-add.png";
+
 const style = css({
   img: {
     margin: "auto",
@@ -13,7 +13,6 @@ const style = css({
 const Header = () => {
   return (
     <header className={style}>
-      <HeaderNavigation />
       <img src={add} alt="sponsored" />
     </header>
   );

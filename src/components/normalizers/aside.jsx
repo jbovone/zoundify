@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
-const Aside = styled.aside({
-  width: "240px",
-  minWidth: "240px",
-});
+const Aside = styled.aside(({ width }) => ({
+  minWidth: width,
+  width: width,
+  resize: "vertical",
+}));
 
 export default Aside;

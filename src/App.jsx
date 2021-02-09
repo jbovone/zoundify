@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Footer from "./components/footer";
+import React, { useState, useEffect, useRef } from "react";
+import Footer from "./components/Footer";
 import Main from "./components/normalizers/main";
 import FriendsAside from "./components/FriendsAside";
 import AsideNavigator from "./components/AsideNavigator";
 import Section from "./components/normalizers/section";
-import Header from "./components/header/Header";
-import Slider from "./components/Slider";
+import Header from "./components/Header";
+import SliderViewer from "./components/SliderViewer";
 import axios from "axios";
 import Error404 from "./components/Error404";
 import { mockData } from "./mockData";
+import Navigation from "./components/Navigation";
 
 function App() {
   // const [appData, setAppData] = useState(false);
@@ -25,11 +26,11 @@ function App() {
       });
   }, []);
   */
-
   console.log(mockData, "MOCKDATA");
   return (
     <Main>
       <AsideNavigator />
+      <Navigation />
       <Section>
         <Header />
         {mockData === "error" ? (
@@ -38,12 +39,12 @@ function App() {
           <span>loading</span>
         ) : (
           mockData.map(({ title, articles }) => (
-            <Slider title={title} articles={articles} />
+            <SliderViewer title={title} articles={articles} />
           ))
         )}
       </Section>
-      <FriendsAside />
       <Footer />
+      <FriendsAside />
     </Main>
   );
 }
