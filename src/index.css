@@ -29,5 +29,6 @@ code {
 @media (max-width: 400px) {
   :root {
     font-size: 75%;
+    background-color: rgb(95, 95, 95);
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/css";
 import { palette } from "../../theme/colors";
 
-const Main = ({ children }) => {
+const Main = ({ children, rAsideWidth, lAsideWidth }) => {
   const style = css({
     width: "100vw",
     height: "100vh",
@@ -10,7 +10,7 @@ const Main = ({ children }) => {
     minHeight: "100vh",
     display: "grid",
     background: palette.backgroundBody,
-    gridTemplateColumns: "240px 1fr 240px",
+    gridTemplateColumns: `${lAsideWidth}px 1fr ${rAsideWidth}px`,
     gridTemplateRows: "8.5vh 1fr 10vh",
     gridTemplateAreas: `
     'aaa nav zzz' 
@@ -27,6 +27,9 @@ const Main = ({ children }) => {
     },
     "@media (max-width: 500px)": {
       gridTemplateColumns: "1fr 1fr 1fr",
+    },
+    "@media (orientation: portrait)": {
+      gridTemplateRows: "auto 1fr auto",
     },
   });
 

@@ -6,7 +6,6 @@ import ButtonIcon from "./ButtonIcon";
 import Lead from "../components/normalizers/typography/lead";
 import { asideNavigation as svgs } from "./svg/customs";
 import { palette } from "../theme/colors";
-import useResize from "../hooks/useResize";
 
 const { Browse, Home, Plus, Radio } = svgs;
 const mainNav = [
@@ -28,7 +27,7 @@ const mainNav = [
   },
 ];
 
-const AsideNavigator = ({ show = true, height }) => {
+const AsideNavigator = ({ show = true, setWidth }) => {
   const style = css({
     position: "relative",
     gridArea: "as1",
@@ -55,7 +54,6 @@ const AsideNavigator = ({ show = true, height }) => {
   });
 
   const [active, setActive] = useState(mainNav);
-  const [width, setWidth] = useResize(240);
 
   function handleActiveBtn(activeItem) {
     const newState = active.map((btn) => {
@@ -70,7 +68,7 @@ const AsideNavigator = ({ show = true, height }) => {
   }
 
   return (
-    <Aside className={style} width={show ? width : 0}>
+    <Aside className={style}>
       <section>
         {mainNav.map((btn, i) => {
           const { title, Component } = btn;

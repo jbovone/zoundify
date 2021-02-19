@@ -6,7 +6,6 @@ import HighLight from "./normalizers/typography/highlighted";
 import MainButton from "./MainButton";
 import { css } from "@emotion/css";
 import { sizes } from "../theme/sizing";
-import useResize from "../hooks/useResize";
 import { flex } from "../helpers";
 
 const style = css({
@@ -25,10 +24,9 @@ const style = css({
   },
 });
 
-const FriendsAside = () => {
-  const [width, setWidth] = useResize(240);
+const FriendsAside = ({ setWidth }) => {
   return (
-    <Aside width={width} className={style}>
+    <Aside className={style}>
       <HighLight size={sizes.h2}>See what your friends are playing</HighLight>
       <MainButton title="FIND FRIENDS" />
       <ReziseBar setWidth={setWidth} left />
