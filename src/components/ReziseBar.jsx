@@ -7,7 +7,7 @@ const ReziseBar = ({ setWidth, right, left }) => {
   const style = css({
     cursor: "col-resize",
     position: "absolute",
-    height: "100%",
+    height: "70%",
     width: "10px !important",
     right: right && "0px !important",
     left: left && "0px !important",

@@ -11,19 +11,18 @@ const ButtonIcon = ({
   Icon,
   active,
   decorator,
+  children,
   setActive = () =>
     console.log("hire me and i can complete the views in no time!"),
   size = sizes.p,
+  className,
 }) => {
   const style = css({
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
     "img, svg": {
-      marginRight: "10px",
-    },
-    span: {
-      fontWeight: "bold",
+      marginRight: ".4rem",
     },
     ":hover": {
       color: palette.fontHighlight,
@@ -40,7 +39,7 @@ const ButtonIcon = ({
 
   return (
     <Button
-      className={style}
+      className={`${style} ${className}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => setActive(title)}
@@ -52,6 +51,7 @@ const ButtonIcon = ({
       ) : (
         <Bold size={size}>{title}</Bold>
       )}
+      {children}
     </Button>
   );
 };

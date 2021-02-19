@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import React from "react";
 
-const Slider = ({ heading }) => {
+const Slider = ({ heading, height = 13 }) => {
   let rotation = 0;
   if (heading === "left") rotation = "90deg";
   if (heading === "right") rotation = "-90deg";
@@ -12,7 +12,7 @@ const Slider = ({ heading }) => {
     <svg
       className={style}
       width="21"
-      height="13"
+      height={height}
       viewBox="0 0 21 13"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

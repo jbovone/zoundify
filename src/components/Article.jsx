@@ -4,11 +4,12 @@ import HighLight from "./normalizers/typography/highlighted";
 import Play from "./svg/Play";
 import { sizes } from "../theme/sizing";
 import Heart from "./svg/Heart";
+import Text from "./normalizers/typography/text";
+import Lead from "./normalizers/typography/lead";
 
 const Article = React.forwardRef(
   ({ name, image, description, followers }, ref) => {
     const style = css({
-      padding: "10px 0",
       minWidth: "33.4%",
       img: {
         width: "90%",
@@ -30,7 +31,6 @@ const Article = React.forwardRef(
         position: "absolute",
         bottom: 0,
         width: "90%",
-        height: "0%",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -59,8 +59,8 @@ const Article = React.forwardRef(
           </div>
         </figure>
         <HighLight>{name}</HighLight>
-        {Boolean(description) && <p>{description}</p>}
-        {Boolean(followers) && <span>{followers} FOLLOWERS</span>}
+        {Boolean(description) && <Text caption>{description}</Text>}
+        {Boolean(followers) && <Lead>{followers} FOLLOWERS</Lead>}
       </article>
     );
   }

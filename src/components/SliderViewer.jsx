@@ -14,18 +14,17 @@ const SliderViewer = ({ title, articles }) => {
   const [displacement, setDisplacement] = useState(0);
 
   const style = css({
-    overflowX: "hidden",
     width: "90%",
     margin: "auto",
-    paddingBottom: 20,
+    overflowX: "hidden",
     header: {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      width: "100%",
+      marginBottom: 20,
       borderBottom: `1px solid ${palette.backgroundFooter}`,
     },
-    section: {
+    ".viewer-container": {
       display: "flex",
       transform: `translateX(-${slide * 100 + displacement}%)`,
       transition: "ease-in-out 0.5s",
@@ -45,7 +44,6 @@ const SliderViewer = ({ title, articles }) => {
   }, []);
 
   function handleSlide(heading) {
-    console.log(heading, "HEADING");
     const { getComputedStyle } = window;
     const articleWidth = getComputedStyle(articleRef.current).width.replace(
       "px",
@@ -79,17 +77,17 @@ const SliderViewer = ({ title, articles }) => {
   }
 
   return (
-    <section className={style} ref={containerRef}>
+    <div className={style} ref={containerRef}>
       <header>
         <Highlighted size={sizes.h2}>{title}</Highlighted>
         <SliderPanel onClick={handleSlide} />
       </header>
-      <section>
+      <section className="viewer-container">
         {articles.map((article) => (
           <Article ref={articleRef} {...article} />
         ))}
       </section>
-    </section>
+    </div>
   );
 };
 

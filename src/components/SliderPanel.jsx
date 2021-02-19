@@ -1,26 +1,28 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import React from "react";
 import Button from "./normalizers/button";
 import Slider from "./svg/Slider";
 
-const style = css({
-  padding: 5,
-  svg: {
-    margin: "0 8px",
-    width: "15px",
-    height: "15px",
-    "&:hover": {
-      filter: "brightness(2)",
+const SliderPanel = ({ onClick, hide, className }) => {
+  const style = css({
+    padding: 5,
+    svg: {
+      margin: "0 8px",
+      width: "15px",
+      height: "15px",
+      "&:hover": {
+        filter: "brightness(2)",
+      },
+      button: {
+        zIndex: 1000,
+      },
     },
-    button: {
-      zIndex: 1000,
+    "@media(max-width: 570px)": {
+      display: hide && "none",
     },
-  },
-});
-
-const SliderPanel = ({ onClick }) => {
+  });
   return (
-    <span className={style}>
+    <span className={cx(style, className)}>
       <Button aria-label="left" onClick={() => onClick("left")}>
         <Slider heading="left" />
       </Button>

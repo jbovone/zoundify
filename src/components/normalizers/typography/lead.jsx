@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { palette } from "../../../theme/colors";
 import { sizes } from "../../../theme/sizing";
 
-const Lead = styled.span(({ size = sizes.p }) => ({
+const Lead = styled.span(({ size = sizes.cap }) => ({
   color: palette.fontSecondary,
-  fontSize: size || 13,
+  fontSize: size,
   fontWeight: "lighter",
   textAlign: "center",
   letterSpacing: 3,

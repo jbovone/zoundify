@@ -1,8 +1,20 @@
+import { css } from "@emotion/css";
 import React from "react";
 
+const style = css({
+  ":hover": {
+    path: {
+      fill: "white",
+    },
+    line: {
+      stroke: "white",
+    },
+  },
+});
 const Queque = () => {
   return (
     <svg
+      className={style}
       width="20"
       height="19"
       viewBox="0 0 10 9"

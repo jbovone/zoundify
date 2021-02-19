@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "./normalizers/button";
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import { palette } from "../theme/colors";
+import { sizes } from "../theme/sizing";
 
 const style = css({
   border: `1px solid ${palette.fontSecondary}`,
@@ -9,17 +10,21 @@ const style = css({
   fontWeight: "bold",
   borderRadius: 20,
   letterSpacing: 2,
-  fontSize: 10.5,
-  padding: "9px 30px",
+  fontSize: sizes.p,
+  padding: "0.75rem 2.5rem",
   textTransform: "uppercase",
   ":hover": {
     transform: "scale(1.1)",
     border: `2px solid ${palette.fontHighlight}`,
   },
+  "@media(max-width: 640px)": {
+    padding: "0.7rem 2.2rem",
+    fontSize: "0.9rem",
+  },
 });
-const MainButton = ({ onClick, title }) => {
+const MainButton = ({ onClick, title, className }) => {
   return (
-    <Button className={style} onClick={onClick}>
+    <Button className={cx(style, className)} onClick={onClick}>
       {title}
     </Button>
   );

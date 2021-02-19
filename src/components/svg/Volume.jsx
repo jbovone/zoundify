@@ -1,8 +1,17 @@
+import { css } from "@emotion/css";
 import React from "react";
 
+const style = css({
+  ":hover": {
+    path: {
+      stroke: "white",
+    },
+  },
+});
 const Volume = () => {
   return (
     <svg
+      className={style}
       width="20"
       height="20"
       viewBox="0 0 9 9"

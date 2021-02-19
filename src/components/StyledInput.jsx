@@ -1,6 +1,6 @@
 import React from "react";
-import { css } from "@emotion/css";
-import search from "../assets/Search.svg";
+import { css, cx } from "@emotion/css";
+import Search from "./Search";
 
 const style = css({
   padding: "3px 2px",
@@ -8,10 +8,7 @@ const style = css({
   background: "white",
   display: "flex",
   alignItems: "center",
-
-  img: {
-    width: 20,
-    height: 20,
+  svg: {
     marginLeft: "12px",
   },
   input: {
@@ -20,14 +17,14 @@ const style = css({
     padding: "13px 0",
     outline: "none",
     margin: "0 8px",
-    width: "160px",
+    width: 130,
   },
 });
 
-const StyledInput = () => {
+const StyledInput = ({ className }) => {
   return (
-    <div className={style}>
-      <img src={search} alt="" />
+    <div className={cx(style, className)}>
+      <Search />
       <input type="text" placeholder="Search" />
     </div>
   );

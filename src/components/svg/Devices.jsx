@@ -1,8 +1,27 @@
+import { css } from "@emotion/css";
 import React from "react";
 
+const style = css({
+  ":hover": {
+    path: {
+      stroke: "white",
+    },
+    circle: {
+      stroke: "white",
+    },
+    rect: {
+      stroke: "white",
+    },
+    ".upper-content": {
+      stroke: "unset",
+      fill: "white",
+    },
+  },
+});
 const Devices = () => {
   return (
     <svg
+      className={style}
       width="24"
       height="23"
       viewBox="0 0 10 9"
@@ -24,7 +43,7 @@ const Devices = () => {
         stroke-width="0.5"
       />
       <circle cx="7.5" cy="6.5" r="1.25" stroke="#888888" stroke-width="0.5" />
-      <path d="M7 1H8V3H7V1Z" fill="#888888" />
+      <path className="upper-content" d="M7 1H8V3H7V1Z" fill="#888888" />
       <path d="M4.5 7H3" stroke="#888888" stroke-width="0.5" />
     </svg>
   );

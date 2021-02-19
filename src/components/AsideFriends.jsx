@@ -7,13 +7,14 @@ import MainButton from "./MainButton";
 import { css } from "@emotion/css";
 import { sizes } from "../theme/sizing";
 import useResize from "../hooks/useResize";
+import { flex } from "../helpers";
 
 const style = css({
   display: "flex",
   position: "relative",
+  ...flex(),
+  gridArea: "as2",
   flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
   background: `url("${background}") bottom no-repeat`,
   backgroundSize: "cover",
   "& > *": {
