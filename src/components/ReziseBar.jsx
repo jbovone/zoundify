@@ -22,7 +22,6 @@ const ReziseBar = ({ setWidth, right, left }) => {
     <Fragment>
       <div
         className={style}
-        left
         draggable={true}
         onDragStart={({ dataTransfer }) => {
           dataTransfer.setDragImage(ref.current, 0, 0);

@@ -28,10 +28,10 @@ const Queque = () => {
         x2="10"
         y2="1.75"
         stroke="#888888"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
-      <line y1="4.75" x2="10" y2="4.75" stroke="#888888" stroke-width="0.5" />
-      <line y1="7.75" x2="10" y2="7.75" stroke="#888888" stroke-width="0.5" />
+      <line y1="4.75" x2="10" y2="4.75" stroke="#888888" strokeWidth="0.5" />
+      <line y1="7.75" x2="10" y2="7.75" stroke="#888888" strokeWidth="0.5" />
     </svg>
   );
 };

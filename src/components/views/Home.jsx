@@ -29,7 +29,7 @@ const Home = () => {
         <Loader />
       ) : (
         appData.map(({ title, articles }) => (
-          <SliderViewer title={title} articles={articles} />
+          <SliderViewer key={title} title={title} articles={articles} />
         ))
       )}
     </Section>

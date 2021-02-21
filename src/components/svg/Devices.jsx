@@ -31,7 +31,7 @@ const Devices = () => {
       <path
         d="M4.5 6H1.66667C1.29848 6 1 5.6802 1 5.28571V1.71429C1 1.3198 1.29848 1 1.66667 1H4.5"
         stroke="#888888"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect
         x="5.25"
@@ -40,11 +40,11 @@ const Devices = () => {
         height="8.5"
         rx="0.75"
         stroke="#888888"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
-      <circle cx="7.5" cy="6.5" r="1.25" stroke="#888888" stroke-width="0.5" />
+      <circle cx="7.5" cy="6.5" r="1.25" stroke="#888888" strokeWidth="0.5" />
       <path className="upper-content" d="M7 1H8V3H7V1Z" fill="#888888" />
-      <path d="M4.5 7H3" stroke="#888888" stroke-width="0.5" />
+      <path d="M4.5 7H3" stroke="#888888" strokeWidth="0.5" />
     </svg>
   );
 };

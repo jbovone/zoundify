@@ -100,7 +100,7 @@ const Footer = () => {
         <Play />
         <Next />
         <Skip15 />
-        <Slider width="100%" />
+        <Slider width="40vw" />
       </section>
       <section className="panel right-panel">
         <Queque />

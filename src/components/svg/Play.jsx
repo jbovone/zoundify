@@ -22,7 +22,7 @@ const Play = ({ height = 37, width = 37 }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="Frame 7">
-        <circle cx="17" cy="17" r="16" stroke="#888888" stroke-width="1.4" />
+        <circle cx="17" cy="17" r="16" stroke="#888888" strokeWidth="1.4" />
         <path d="M12 10L25 16.72L12 24V10Z" fill="white" />
       </g>
     </svg>

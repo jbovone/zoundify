@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/css";
-import Section from "./normalizers/section";
 
 const style = css({
   width: 250,
@@ -68,15 +67,15 @@ const Loader = () => {
         state[state.length - 1],
         ...state.slice(0, state.length - 1),
       ]);
-
-      return () => window.clearTimeout(timeout);
     }, 180);
+    return () => window.clearTimeout(timeout);
   }, [state]);
 
   return (
     <div className={style}>
       {state.map((_, i) => (
         <div
+          key={"loader-" + i}
           style={{
             background: state[i],
           }}

@@ -38,7 +38,7 @@ const Search = ({ variant, onClick }) => {
                 height="0.90372"
                 transform="rotate(42.97 17.5706 16.2485)"
                 stroke="black"
-                stroke-width="0.90372"
+                strokeWidth="0.90372"
               />
             </g>
           </svg>
@@ -63,7 +63,7 @@ const Search = ({ variant, onClick }) => {
               height="0.90372"
               transform="rotate(42.97 17.5706 16.2485)"
               stroke="black"
-              stroke-width="0.90372"
+              strokeWidth="0.90372"
             />
           </g>
         </svg>

@@ -84,7 +84,7 @@ const SliderViewer = ({ title, articles }) => {
       </header>
       <section className="viewer-container">
         {articles.map((article) => (
-          <Article ref={articleRef} {...article} />
+          <Article key={article.id} ref={articleRef} {...article} />
         ))}
       </section>
     </div>

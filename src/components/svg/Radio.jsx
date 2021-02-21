@@ -15,32 +15,29 @@ const Radio = ({ active, hover }) => {
         <rect width="32" height="32" fill={backgroundBody} />
         <g id="Radio">
           <circle
-            id="Ellipse 3"
             cx="16"
             cy="16"
             r="13"
             stroke={
               active ? fontHighlight : hover ? fontHighlight : fontSecondary
             }
-            stroke-width={active ? 3 : 2}
+            strokeWidth={active ? 3 : 2}
           />
           <circle
-            id="Ellipse 4"
             cx="16"
             cy="16"
             r="8"
             stroke={
               active ? fontHighlight : hover ? fontHighlight : fontSecondary
             }
-            stroke-width={active ? 3 : 2}
+            strokeWidth={active ? 3 : 2}
           />
           <circle
-            id="Ellipse 5"
             cx="16"
             cy="16"
             r="3"
-            fill={active ? fontHighlight : hover && fontHighlight}
-            stroke-width={active ? 3 : 2}
+            fill={active && hover ? fontHighlight : fontHighlight}
+            strokeWidth={active ? 3 : 2}
             stroke={active ? fontHighlight : fontSecondary}
           />
         </g>

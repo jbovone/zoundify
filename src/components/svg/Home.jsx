@@ -20,7 +20,7 @@ const Home = ({ hover, active }) => {
           stroke={
             hover ? fontHighlight : active ? fontHighlight : fontSecondary
           }
-          stroke-width="2"
+          strokeWidth="2"
         />
       </g>
     </svg>

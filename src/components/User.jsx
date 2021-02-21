@@ -5,9 +5,16 @@ import Button from "./normalizers/button";
 import Slider from "./svg/Slider";
 import Dropdown from "./Dropdown";
 import UserPortrait from "./svg/User-Portrait";
+import { flex } from "../helpers";
 
 const style = css({
   whiteSpace: "nowrap",
+});
+const container = css({
+  ...flex(),
+  ".dropdown": {
+    margin: "0.5rem",
+  },
 });
 
 const dropdown = [
@@ -25,26 +32,28 @@ const User = ({ className }) => {
     /* do something */
   }
   return (
-    <ButtonIcon
-      className={cx(style, className)}
-      title="Julian Bovone"
-      Icon={UserPortrait}
-      active={true}
-    >
+    <div className={container}>
+      <ButtonIcon
+        className={cx(style, className)}
+        title="Julian Bovone"
+        Icon={UserPortrait}
+        active={true}
+      >
+        {show && (
+          <Dropdown
+            top
+            right
+            data={dropdown}
+            show={show}
+            setShow={setShow}
+            onClick={menu}
+          />
+        )}
+      </ButtonIcon>
       <Button className="dropdown" onClick={() => setShow(true)}>
         <Slider height="10" />
       </Button>
-      {show && (
-        <Dropdown
-          top
-          right
-          data={dropdown}
-          show={show}
-          setShow={setShow}
-          onClick={menu}
-        />
-      )}
-    </ButtonIcon>
+    </div>
   );
 };
 

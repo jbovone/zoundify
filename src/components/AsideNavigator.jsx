@@ -74,6 +74,7 @@ const AsideNavigator = ({ show = true, setWidth }) => {
           const { title, Component } = btn;
           return (
             <ButtonIcon
+              key={`aside-nav-${i}`}
               title={title}
               Icon={Component}
               setActive={handleActiveBtn}
@@ -94,7 +95,7 @@ const AsideNavigator = ({ show = true, setWidth }) => {
           "Artists",
           "Podcasts",
         ].map((item) => (
-          <ButtonIcon title={item} />
+          <ButtonIcon key={item} title={item} />
         ))}
       </section>
 

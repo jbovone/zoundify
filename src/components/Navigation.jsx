@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { css, cx } from "@emotion/css";
 import { palette } from "../theme/colors";
 import MainButton from "./MainButton";
