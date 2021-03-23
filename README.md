@@ -1,3 +1,15 @@
+# About this proyect:
+
+Hi!
+This is a mimic of the last (as far as 2021) UI of the spotify APP. Adicionally, it consumes the real spotify API.
+The spotify api it's been used here to feed the viewers with the featured data lists, the same endpoints the real app uses in their frontend.
+
+## You can View a demo here:
+
+https://zoundify.herokuapp.com/
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
