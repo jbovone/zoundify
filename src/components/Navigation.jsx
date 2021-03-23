@@ -27,7 +27,7 @@ const Navigation = ({ onClick }) => {
     },
   });
 
-  const pc = css({
+  const desktopStyle = css({
     display: "none",
     justifyContent: "space-evenly",
     ".c-structural": {
@@ -38,7 +38,7 @@ const Navigation = ({ onClick }) => {
     },
   });
 
-  const movile = css({
+  const mobileStyle = css({
     flexDirection: "row-reverse",
     justifyContent: "flex-start",
     "&>*": {
@@ -74,7 +74,7 @@ const Navigation = ({ onClick }) => {
   }
   return (
     <>
-      <nav className={cx(nav, movile)}>
+      <nav className={cx(nav, mobileStyle)}>
         <Search variant="header" onClick={swapContentWithFading} />
         {swap ? (
           <StyledInput className="search-input" />
@@ -86,7 +86,7 @@ const Navigation = ({ onClick }) => {
           </>
         )}
       </nav>
-      <nav className={cx(nav, pc)}>
+      <nav className={cx(nav, desktopStyle)}>
         <SliderPanel hide />
         <StyledInput className="search-input" />
         <div className="c-structural" />

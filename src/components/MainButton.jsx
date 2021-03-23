@@ -1,15 +1,16 @@
 import React from "react";
-import Button from "./normalizers/button";
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/css";
 import { palette } from "../theme/colors";
 import { sizes } from "../theme/sizing";
 
 const style = css({
   border: `1px solid ${palette.fontSecondary}`,
   color: palette.fontHighlight,
+  cursor: "pointer",
   fontWeight: "bold",
   borderRadius: 20,
   letterSpacing: 2,
+  background: "black",
   fontSize: sizes.p,
   padding: "0.75rem 2.5rem",
   textTransform: "uppercase",
@@ -22,11 +23,11 @@ const style = css({
     fontSize: "0.9rem",
   },
 });
-const MainButton = ({ onClick, title, className }) => {
+const MainButton = ({ onClick = console.log("click"), title }) => {
   return (
-    <Button className={cx(style, className)} onClick={onClick}>
+    <button className={style} onClick={onClick}>
       {title}
-    </Button>
+    </button>
   );
 };
 
