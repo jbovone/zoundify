@@ -1,6 +1,5 @@
 {
   "name": "zoundify",
-  "homepage": "https://jbovone.github.io/zoundify",
   "version": "0.1.0",
   "engines": {
     "node": "14.15.4"
