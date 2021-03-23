@@ -27,7 +27,6 @@
     "dev": "concurrently \"yarn nodemon\" \"yarn react\"",
     "react": "react-scripts start",
     "nodemon:": "nodemon ./backend/server.js",
-    "build": "react-scripts build",
     "test": "react-scripts test"
   },
   "proxy": "http://localhost:3001/",
