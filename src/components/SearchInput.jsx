@@ -1,6 +1,6 @@
 import React from "react";
 import { css, cx } from "@emotion/css";
-import Search from "./Search";
+import MagnifyingGlass from "./svg/MagnifyingGlass";
 
 const style = css({
   padding: "3px 2px",
@@ -24,7 +24,7 @@ const style = css({
 const StyledInput = ({ className }) => {
   return (
     <div className={cx(style, className)}>
-      <Search />
+      <MagnifyingGlass />
       <input type="text" placeholder="Search" />
     </div>
   );

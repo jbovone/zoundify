@@ -10,12 +10,6 @@ import { flex } from "../helpers";
 const style = css({
   whiteSpace: "nowrap",
 });
-const container = css({
-  ...flex(),
-  ".dropdown": {
-    margin: "0.5rem",
-  },
-});
 
 const dropdown = [
   "Private Session",
@@ -25,16 +19,23 @@ const dropdown = [
   "Logout",
 ];
 
-const User = ({ className }) => {
+const User = ({ cssProps }) => {
   const [show, setShow] = useState(false);
   function menu(item) {
     console.log(item);
     /* do something */
   }
+  const container = css({
+    ...flex(),
+    ...cssProps,
+    ".dropdown": {
+      margin: "0.5rem",
+    },
+  });
   return (
     <div className={container}>
       <ButtonIcon
-        className={cx(style, className)}
+        className={style}
         title="Julian Bovone"
         Icon={UserPortrait}
         active={true}
