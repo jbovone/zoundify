@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { css, cx } from "@emotion/css";
 import MagnifyingGlass from "./svg/MagnifyingGlass";
 
@@ -22,10 +22,12 @@ const style = css({
 });
 
 const StyledInput = ({ className }) => {
+  const ref = useRef(null);
+
   return (
-    <div className={cx(style, className)}>
+    <div className={cx(style, className)} onClick={() => ref.current.focus()}>
       <MagnifyingGlass />
-      <input type="text" placeholder="Search" />
+      <input ref={ref} type="text" placeholder="Search" />
     </div>
   );
 };
