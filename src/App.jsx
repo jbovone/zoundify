@@ -6,17 +6,18 @@ import AsideFriends from "./components/AsideFriends";
 import AsideNavigator from "./components/AsideNavigator";
 import Navigation from "./components/Navigation";
 import Home from "./components/views/Home";
-import ShowMenuBtn from "./components/ShowMenuBtn";
-import useResize from "./hooks/useResize";
+import MenuBtn from "./components/MenuBtn";
+import WithMenu from "./components/withMenu";
+import useVariableWidths from "./hooks/useVariableWidths";
 
 function App() {
   const [showMenu, setShowMenu] = useState(true);
-  const [leftWidth, setLeftWidth] = useResize(240);
-  const [rightWidth, setRightWidth] = useResize(240);
+  const [leftWidth, setLeftWidth] = useVariableWidths(240);
+  const [rightWidth, setRightWidth] = useVariableWidths(240);
 
   return (
     <Main rAsideWidth={rightWidth} lAsideWidth={leftWidth}>
-      <ShowMenuBtn setShowMenu={setShowMenu} />
+      <WithMenu MenuBtn={MenuBtn} setShowMenu={setShowMenu} open={showMenu} />
       <Navigation />
       <AsideNavigator show={showMenu} setWidth={setLeftWidth} />
       <Home />

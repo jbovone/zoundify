@@ -18,7 +18,7 @@ const Main = ({ children, rAsideWidth, lAsideWidth }) => {
     'foo foo foo'`,
     "@media (max-width: 1100px)": {
       gridTemplateAreas: `
-      'aaa nav nav' 
+      'nav nav nav' 
       'as1 viw viw' 
       'foo foo foo'`,
     },

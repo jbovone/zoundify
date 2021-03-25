@@ -4,11 +4,13 @@ import { palette } from "../theme/colors";
 import MainButton from "./MainButton";
 import SliderPanel from "./SliderPanel";
 import SearchInput from "./SearchInput";
+import MenuBtn from "./MenuBtn";
 import User from "./User";
 import { flex } from "../helpers";
 import SearchBtn from "./SearchBtn";
+import HighLight from "./normalizers/typography/highlighted";
 
-const Navigation = ({ onClick }) => {
+const Navigation = ({ onClick, showMenu, setShowMenu }) => {
   const [swap, setSwap] = useState(true);
   const [fade, setFade] = useState(1);
   const timmer = 320;
@@ -18,13 +20,13 @@ const Navigation = ({ onClick }) => {
     position: "relative",
     background: palette.backgroundBody,
     minHeight: 80,
-    paddingLeft: "30px",
     "&>*": {
       margin: "0 .4rem",
     },
     ...flex(),
-    "@media(max-width:1100px)": {
+    "@media(max-width:1140px)": {
       gridColumn: "1 / span 3",
+      paddingLeft: "50px",
     },
   });
 

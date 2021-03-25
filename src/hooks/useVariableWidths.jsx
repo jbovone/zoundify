@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useResize = (initialWidth) => {
+const useVariableWidths = (initialWidth) => {
   const [width, setWidth] = useState(initialWidth);
 
   function handleWidth(nextWidth) {
@@ -13,4 +13,4 @@ const useResize = (initialWidth) => {
   return [width, handleWidth];
 };
 
-export default useResize;
+export default useVariableWidths;
