@@ -1,6 +1,5 @@
 import React from "react";
 import { css, cx } from "@emotion/css";
-import Button from "./normalizers/button";
 
 const styleAsClose = css({
   "&>*": {

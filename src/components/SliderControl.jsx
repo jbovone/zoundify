@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { flex } from "../helpers";
 import { palette } from "../theme/colors";
 
-const Slider = ({ width }) => {
+const Slider = ({ width, cssProps }) => {
   const [value, setValue] = useState(0);
   function handleChange(e) {
     setValue(() => e.target.value);
@@ -71,6 +71,7 @@ const Slider = ({ width }) => {
         zIndex: 100,
       },
     },
+    ...cssProps,
   });
 
   return (

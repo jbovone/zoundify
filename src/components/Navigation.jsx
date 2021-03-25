@@ -4,11 +4,9 @@ import { palette } from "../theme/colors";
 import MainButton from "./MainButton";
 import SliderPanel from "./SliderPanel";
 import SearchInput from "./SearchInput";
-import MenuBtn from "./MenuBtn";
 import User from "./User";
 import { flex } from "../helpers";
 import SearchBtn from "./SearchBtn";
-import HighLight from "./normalizers/typography/highlighted";
 
 const Navigation = ({ onClick, showMenu, setShowMenu }) => {
   const [swap, setSwap] = useState(true);

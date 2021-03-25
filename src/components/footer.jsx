@@ -11,6 +11,7 @@ import Text from "./normalizers/typography/text";
 const style = css({
   ...flex("space-between", "center"),
   gridArea: "foo",
+  minHeight: "100px",
   ".panel": {
     ...flex(),
     "&>*": {
@@ -48,14 +49,19 @@ const style = css({
       marginLeft: "1rem",
     },
   },
-  "@media(min-width: 400px)": {
-    justifyContent: "space-evenly",
-    ".panel": {
-      flex: "unset",
+
+  "@media(min-width: 1200px)": {
+    justifyContent: "space-between",
+    ".right-panel": {
+      marginRight: 20,
+      "&>*": {
+        marginLeft: "2rem",
+      },
     },
   },
-  "@media(max-width: 640px)": {
+  "@media(max-width: 840px)": {
     flexWrap: "wrap",
+    minHeight: "150px",
     justifyContent: "space-between",
     ".panel img": {
       maxHeight: "30px",
@@ -69,16 +75,19 @@ const style = css({
       order: 2,
     },
   },
-  "@media(min-width: 1200px)": {
-    justifyContent: "space-between",
-    ".right-panel": {
-      marginRight: 20,
-      "&>*": {
-        marginLeft: "2rem",
-      },
-    },
+  "@media(max-width: 400px)": {
+    minHeight: "180px",
   },
 });
+
+const centerSliderExtraCSS = {
+  "@media(max-width: 840px)": {
+    width: "90vw",
+    "input[type=range]": {
+      width: "90vw",
+    },
+  },
+};
 const Footer = () => {
   const { Devices, Skip15, Queque, Volume, Next, Play, Heart } = footer;
   return (
@@ -100,7 +109,7 @@ const Footer = () => {
         <Play />
         <Next />
         <Skip15 />
-        <Slider width="40vw" />
+        <Slider width="50vw" cssProps={centerSliderExtraCSS} />
       </section>
       <section className="panel right-panel">
         <Queque />
