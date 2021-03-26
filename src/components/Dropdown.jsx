@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { palette } from "../theme/colors";
 
 const Dropdown = ({

@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import SliderViewer from "../SliderViewer";
 import axios from "axios";
 import Error404 from "../Error404";
-
-import Header from "../Header";
 import Section from "../normalizers/section";
 import Loader from "../Loader";
 
-const Home = () => {
+const Home = forwardRef((_, ref) => {
   const [appData, setAppData] = useState(false);
+
   useEffect(() => {
     axios
       .get("/browse")
@@ -21,8 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Section>
-      <Header />
+    <Section ref={ref}>
       {appData === "error" ? (
         <Error404 />
       ) : !appData ? (
@@ -34,6 +32,5 @@ const Home = () => {
       )}
     </Section>
   );
-};
-
+});
 export default Home;

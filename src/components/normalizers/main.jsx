@@ -13,11 +13,13 @@ const Main = ({ children, rAsideWidth, lAsideWidth }) => {
     gridTemplateColumns: `${lAsideWidth}px 1fr ${rAsideWidth}px`,
     gridTemplateAreas: `
     'aaa nav zzz' 
+    'aaa hea as2' 
     'as1 viw as2' 
     'foo foo foo'`,
     "@media (max-width: 1100px)": {
       gridTemplateAreas: `
       'nav nav nav' 
+      'hea hea hea'
       'as1 viw viw' 
       'foo foo foo'`,
     },

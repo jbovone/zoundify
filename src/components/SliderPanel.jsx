@@ -3,7 +3,7 @@ import React from "react";
 import Button from "./normalizers/button";
 import Slider from "./svg/Slider";
 
-const SliderPanel = ({ onClick, hide, className }) => {
+const SliderPanel = ({ onClick = () => {}, hide, className }) => {
   const style = css({
     padding: 5,
     svg: {

@@ -5,6 +5,7 @@ const Section = styled.section({
   width: "100%",
   gridArea: "viw",
   overflowY: "scroll",
+  position: "relative",
   "@media(max-width:1100px)": {
     gridColumn: "1 / span 3",
   },

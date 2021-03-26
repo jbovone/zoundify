@@ -7,7 +7,6 @@ const Slider = ({ width, cssProps }) => {
   const [value, setValue] = useState(0);
   function handleChange(e) {
     setValue(() => e.target.value);
-    console.log(e.screenX);
   }
   const style = css({
     width: width,
