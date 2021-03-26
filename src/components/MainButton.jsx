@@ -14,6 +14,7 @@ const MainButton = ({ onClick, title, cssProps }) => {
     background: "black",
     fontSize: sizes.p,
     padding: "0.7rem 2.2rem",
+    margin: "auto",
     textTransform: "uppercase",
     ":hover": {
       transform: "scale(1.1)",
@@ -21,10 +22,17 @@ const MainButton = ({ onClick, title, cssProps }) => {
     },
     ...cssProps,
   });
+  const placeHolderStyle = css({
+    minHeight: 43,
+    bottom: 0,
+  });
+
   return (
-    <button className={style} onClick={onClick}>
-      {title}
-    </button>
+    <div className={placeHolderStyle}>
+      <button className={style} onClick={onClick}>
+        {title}
+      </button>
+    </div>
   );
 };
 

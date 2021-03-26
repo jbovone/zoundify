@@ -30,7 +30,7 @@ const ShowMenu = ({ setShowMenu, open, cssProps }) => {
     transition: "linear 3s",
     width: 25,
     height: 30,
-    background: "black",
+    background: "transparent",
     margin: "auto 15px",
     top: 25,
     outline: "none",
