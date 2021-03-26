@@ -20,6 +20,10 @@ code {
     monospace;
 }
 
+a {
+  color: rgb(212, 212, 212);
+}
+
 @media (max-width: 500px) {
   :root {
     font-size: 90%;

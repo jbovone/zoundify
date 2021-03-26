@@ -59,7 +59,12 @@ const Article = React.forwardRef(
           </div>
         </figure>
         <HighLight>{name}</HighLight>
-        {Boolean(description) && <Text caption>{description}</Text>}
+        {Boolean(description) && (
+          <Text
+            dangerouslySetInnerHTML={{ __html: description }}
+            caption
+          ></Text>
+        )}
         {Boolean(followers) && <Lead>{followers} FOLLOWERS</Lead>}
       </article>
     );
