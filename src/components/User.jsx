@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { css, cx } from "@emotion/css";
+import { css } from "@emotion/css";
 import ButtonIcon from "./ButtonIcon";
 import Button from "./normalizers/button";
 import Slider from "./svg/Slider";
@@ -27,10 +27,8 @@ const User = ({ cssProps }) => {
   }
   const container = css({
     ...flex(),
+    marginRight: "1em",
     ...cssProps,
-    ".dropdown": {
-      margin: "0.5rem",
-    },
   });
   return (
     <div className={container}>

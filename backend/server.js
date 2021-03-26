@@ -4,16 +4,20 @@ const mapper = require("./mapper");
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
+const mockData = require("../mockData");
 
 const app = express();
 app.use(cors());
 
 app.get("/home", async (req, res) => {
-  const token = await getSpotifyToken();
-  const browseData = await homeSpotify(token);
-
-  console.log(mapper(browseData));
-  res.send(mapper(browseData));
+  try {
+    const token = await getSpotifyToken();
+    const browseData = await homeSpotify(token);
+    res.send(mapper(browseData));
+  } catch (err) {
+    console.log(err);
+    res.send(mockData);
+  }
 });
 
 app.use(express.static(path.join(process.cwd(), "build")));

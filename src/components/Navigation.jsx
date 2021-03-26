@@ -45,6 +45,7 @@ const Navigation = ({ onClick, showMenu, setShowMenu }) => {
   const mobileStyle = css({
     flexDirection: "row-reverse",
     justifyContent: "flex-start",
+    zIndex: 1001,
     "&>*": {
       transition: `ease-in-out, ${timmer}ms`,
       margin: "0 5px",

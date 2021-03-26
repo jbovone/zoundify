@@ -24,6 +24,7 @@ const MainButton = ({ onClick, title, cssProps }) => {
   });
   const placeHolderStyle = css({
     minHeight: 43,
+    minWidth: 156,
     bottom: 0,
   });
 

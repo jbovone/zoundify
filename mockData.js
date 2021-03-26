@@ -1,4 +1,4 @@
-export const mockData = [
+const mockData = [
   {
     title: "Mock Data",
     articles: [
@@ -304,3 +304,5 @@ export const mockData = [
     ],
   },
 ];
+
+module.exports = mockData

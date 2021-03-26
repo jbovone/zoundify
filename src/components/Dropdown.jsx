@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { palette } from "../theme/colors";
+import Text from "./normalizers/typography/text";
 
 const Dropdown = ({
   top,
@@ -18,10 +19,10 @@ const Dropdown = ({
     padding: "22px 10px",
     maxWidth: "fit-content",
     zIndex: 100000,
-    top: top && 50,
+    top: top && 57,
     bottom: bottom && 50,
     left: left && 0,
-    right: right && 0,
+    right: right && 15,
     background: palette.backgroundFooter,
     ".decorator": {
       width: "22px",
@@ -39,25 +40,29 @@ const Dropdown = ({
       padding: 10,
       cursor: "pointer",
       zIndex: 100,
+      color: palette.fontHighlight,
       ":hover": {
-        color: palette.fontHighlight,
         background: palette.fontSecondary,
       },
     },
   });
   const ref = useRef();
+  const checkOrigin = useCallback(
+    (e) => {
+      if (!ref.current.contains(e.target)) {
+        setShow(false);
+      }
+    },
+    [setShow]
+  );
 
   useEffect(() => {
     window.addEventListener("click", checkOrigin);
     return () => {
       window.removeEventListener("click", checkOrigin);
     };
-  }, [ref]);
-  function checkOrigin(e) {
-    if (!ref.current.contains(e.target)) {
-      setShow(false);
-    }
-  }
+  }, [ref, checkOrigin]);
+
   function handleClick(option) {
     window.removeEventListener("click", checkOrigin);
     setShow(false);
@@ -66,13 +71,13 @@ const Dropdown = ({
   return (
     <article className={style} ref={ref}>
       {data.map((option) => (
-        <div
+        <Text
           className="option"
           key={option}
           onClick={() => handleClick(option)}
         >
           {option}
-        </div>
+        </Text>
       ))}
       <div className="decorator" />
     </article>

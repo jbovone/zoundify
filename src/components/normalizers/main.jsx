@@ -16,7 +16,7 @@ const Main = ({ children, rAsideWidth, lAsideWidth }) => {
     'as1 hea as2' 
     'as1 viw as2' 
     'foo foo foo'`,
-    "@media (max-width: 1100px)": {
+    "@media (max-width: 1140px)": {
       gridTemplateAreas: `
       'nav nav nav' 
       'hea hea hea'

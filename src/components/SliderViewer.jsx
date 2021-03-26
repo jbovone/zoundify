@@ -28,6 +28,7 @@ const SliderViewer = ({ title, articles }) => {
       display: "flex",
       transform: `translateX(-${slide * 100 + displacement}%)`,
       transition: "ease-in-out 0.5s",
+      marginBottom: 40,
     },
   });
 

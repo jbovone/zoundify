@@ -1,13 +1,16 @@
 import { css, cx } from "@emotion/css";
 import React from "react";
+import { flex } from "../helpers";
 import Button from "./normalizers/button";
 import Slider from "./svg/Slider";
 
 const SliderPanel = ({ onClick = () => {}, hide, className }) => {
   const style = css({
     padding: 5,
+    margin: 0,
+    ...flex(),
     svg: {
-      margin: "0 8px",
+      margin: 0,
       width: "15px",
       height: "15px",
       "&:hover": {
@@ -22,14 +25,14 @@ const SliderPanel = ({ onClick = () => {}, hide, className }) => {
     },
   });
   return (
-    <span className={cx(style, className)}>
+    <div className={cx(style, className)}>
       <Button aria-label="left" onClick={() => onClick("left")}>
         <Slider heading="left" />
       </Button>
       <Button aria-label="right" onClick={() => onClick("right")}>
         <Slider heading="right" />
       </Button>
-    </span>
+    </div>
   );
 };
 

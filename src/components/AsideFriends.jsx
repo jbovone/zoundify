@@ -19,7 +19,7 @@ const style = css({
   "& > *": {
     margin: "20px 10px",
   },
-  "@media (max-width: 1100px)": {
+  "@media (max-width: 1140px)": {
     display: "none",
   },
 });
@@ -27,7 +27,7 @@ const style = css({
 const FriendsAside = ({ setWidth }) => {
   return (
     <Aside className={style}>
-      <HighLight size={sizes.h2}>See what your friends are playing</HighLight>
+      <HighLight size={sizes.h4}>See what your friends are playing</HighLight>
       <MainButton title="FIND FRIENDS" />
       <ReziseBar setWidth={setWidth} left />
     </Aside>
