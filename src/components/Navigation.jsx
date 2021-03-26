@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { css, cx } from "@emotion/css";
-import { palette } from "../theme/colors";
 import MainButton from "./MainButton";
 import SliderPanel from "./SliderPanel";
 import SearchInput from "./SearchInput";
@@ -16,7 +15,7 @@ const Navigation = ({ onClick, showMenu, setShowMenu }) => {
   const nav = css({
     gridArea: "nav",
     position: "relative",
-    background: palette.backgroundBody,
+    background: "transparent",
     minHeight: 80,
     "&>*": {
       margin: "0 .4rem",
@@ -79,6 +78,7 @@ const Navigation = ({ onClick, showMenu, setShowMenu }) => {
   const searchButtonExtraCSS = {
     ...withFaddingEffectCSS,
   };
+
   function swapContentWithFading() {
     setFade(0);
     setTimeout(() => {

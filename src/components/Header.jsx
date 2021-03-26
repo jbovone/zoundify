@@ -12,7 +12,7 @@ const slideInStyle = css({
 
 const slideOutStyle = (intitialPosition) =>
   css({
-    transition: "all 0.3s",
+    transition: "all 0.4s",
     opacity: 0,
     transform: `translateY(${intitialPosition}%)`,
   });
@@ -28,7 +28,7 @@ const placeholderStyle = css({
 const Header = ({ scrollValue, title = "Home" }) => {
   const [fade, setFade] = useState(false);
   const headerStyle = css({
-    height: fade ? 90 : 110,
+    height: 110,
     transition: "all 0.3s",
     display: "flex",
     position: "relative",
@@ -38,7 +38,7 @@ const Header = ({ scrollValue, title = "Home" }) => {
     flexFlow: "column-reverse",
     width: "100%",
     zIndex: 100,
-    background: palette.backgroundBody,
+    background: "transparent",
     paddingBottom: 25,
   });
 
@@ -55,7 +55,7 @@ const Header = ({ scrollValue, title = "Home" }) => {
     <header className={headerStyle}>
       <div
         className={cx({
-          [slideOutStyle(-30)]: fade,
+          [slideOutStyle(-80)]: fade,
           [slideInStyle]: !fade,
         })}
       >

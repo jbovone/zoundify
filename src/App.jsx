@@ -11,6 +11,7 @@ import WithMenu from "./components/withMenu";
 import useVariableWidths from "./hooks/useVariableWidths";
 import Header from "./components/Header";
 import useScroll from "./hooks/useScroll";
+import Curtain from "./components/Curtain";
 
 function App() {
   const [showMenu, setShowMenu] = useState(true);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <Main rAsideWidth={rightWidth} lAsideWidth={leftWidth}>
+      <Curtain scrollValue={scrollData} />
       <WithMenu MenuBtn={MenuBtn} setShowMenu={setShowMenu} open={showMenu} />
       <Navigation />
       <Header scrollValue={scrollData} />
