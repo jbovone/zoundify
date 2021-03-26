@@ -13,7 +13,6 @@ const Curtain = ({ scrollValue }) => {
     top: 0,
     bottom: -110,
   });
-  console.log(scrollValue);
   return <div className={curtainStyle} />;
 };
 

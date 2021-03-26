@@ -54,13 +54,21 @@ const SliderViewer = ({ title, articles }) => {
       ""
     );
     const itemsPerSlide = Math.round(containerWidth / articleWidth);
-    const totalSlides = Math.round(articles.length / itemsPerSlide) - 1;
+    const totalSlides = Math.floor(articles.length / itemsPerSlide) - 1;
     const itemsImpairment = articles.length % itemsPerSlide;
 
-    if (heading === "right" && slide !== totalSlides) {
+    if (heading === "right" && slide < totalSlides) {
+      console.log("SLIDE-RIGHT");
       setSlide(slide + 1);
+      console.table({ totalSlides, itemsPerSlide, itemsImpairment });
     }
-    if (heading === "right" && slide === totalSlides && itemsImpairment !== 0) {
+    if (
+      heading === "right" &&
+      slide === totalSlides &&
+      itemsImpairment &&
+      !displacement
+    ) {
+      console.log("displacement right");
       return setDisplacement((itemsImpairment / itemsPerSlide) * 100);
     }
 
