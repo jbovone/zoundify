@@ -10,7 +10,7 @@ const Home = forwardRef((_, ref) => {
 
   useEffect(() => {
     axios
-      .get("/browse")
+      .get("/home")
       .then((res) => {
         setAppData(res.data);
       })

@@ -79,7 +79,7 @@ const SliderViewer = ({ title, articles }) => {
   return (
     <div className={style} ref={containerRef}>
       <header>
-        <Highlighted size={sizes.h2}>{title}</Highlighted>
+        <Highlighted size={sizes.h3}>{title}</Highlighted>
         <SliderPanel onClick={handleSlide} />
       </header>
       <section className="viewer-container">

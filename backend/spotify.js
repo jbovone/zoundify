@@ -22,24 +22,19 @@ function getSpotifyToken() {
     .catch(() => false);
 }
 
-async function browseSpotify(token) {
+async function homeSpotify(token) {
   return await Promise.all(
-    ["featured-playlists", "new-releases"].map((endpoint) =>
-      axios({
-        method: "get",
-        url: `https://api.spotify.com/v1/browse/${endpoint}`,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Authorization: Bearer ${token}`,
-        },
-        params: {
-          grant_type: "client_credentials",
-        },
-        json: true,
-      })
+    [
+      { title: "Featured Playlists", endpoint: "featured-playlists" },
+      { title: "New Releases", endpoint: "new-releases" },
+      { title: "Mood", endpoint: "categories/mood/playlists" },
+      { title: "Top Lists", endpoint: "categories/toplists/playlists" },
+      { title: "Romance", endpoint: "categories/romance/playlists" },
+      { title: "Instrumental", endpoint: "categories/instrumental/playlists" },
+    ].map(({ endpoint, title }) =>
+      getSpotifyData(token, endpoint)
         .then((res) => {
-          res.data.title = endpoint.replace("-", " ");
+          res.data.title = title;
           return res.data;
         })
         .catch(() => false)
@@ -47,4 +42,20 @@ async function browseSpotify(token) {
   );
 }
 
-module.exports = { getSpotifyToken, browseSpotify };
+function getSpotifyData(token, endpoint) {
+  return axios({
+    method: "get",
+    url: `https://api.spotify.com/v1/browse/${endpoint}`,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Authorization: Bearer ${token}`,
+    },
+    params: {
+      grant_type: "client_credentials",
+    },
+    json: true,
+  });
+}
+
+module.exports = { getSpotifyToken, homeSpotify, getSpotifyData };

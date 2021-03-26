@@ -25,7 +25,7 @@ const placeholderStyle = css({
   bottom: 5,
   zIndex: 10000,
 });
-const Header = ({ scrollValue, title = "home" }) => {
+const Header = ({ scrollValue, title = "Home" }) => {
   const [fade, setFade] = useState(false);
   const headerStyle = css({
     height: fade ? 90 : 110,

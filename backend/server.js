@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { browseSpotify, getSpotifyToken } = require("./spotify");
+const { homeSpotify, getSpotifyToken } = require("./spotify");
 const mapper = require("./mapper");
 const path = require("path");
 const express = require("express");
@@ -8,10 +8,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-app.get("/browse", async (req, res) => {
+app.get("/home", async (req, res) => {
   const token = await getSpotifyToken();
-  const browseData = await browseSpotify(token);
-  console.log(mapper(browseData)[0].articles);
+  const browseData = await homeSpotify(token);
+
+  console.log(mapper(browseData));
   res.send(mapper(browseData));
 });
 
