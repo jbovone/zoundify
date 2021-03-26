@@ -54,25 +54,26 @@ const SliderViewer = ({ title, articles }) => {
       ""
     );
     const itemsPerSlide = Math.round(containerWidth / articleWidth);
-    const totalSlides = Math.ceil(articles.length / itemsPerSlide) - 1;
+    const totalSlides = Math.round(articles.length / itemsPerSlide) - 1;
     const itemsImpairment = articles.length % itemsPerSlide;
 
     if (heading === "right" && slide !== totalSlides) {
-      if (slide === totalSlides - 1 && itemsImpairment !== 0) {
-        return setDisplacement((itemsImpairment / itemsPerSlide) * 100);
-      }
       setSlide(slide + 1);
     }
+    if (heading === "right" && slide === totalSlides && itemsImpairment !== 0) {
+      return setDisplacement((itemsImpairment / itemsPerSlide) * 100);
+    }
 
-    if (heading === "left" && slide !== 0) {
-      if (
-        slide === totalSlides - 1 &&
-        itemsImpairment !== 0 &&
-        displacement !== 0
-      ) {
-        return setDisplacement(0);
-      }
+    if (heading === "left" && slide !== 0 && !displacement) {
       setSlide(slide - 1);
+    }
+    if (
+      heading === "left" &&
+      slide === totalSlides &&
+      itemsImpairment !== 0 &&
+      displacement !== 0
+    ) {
+      return setDisplacement(0);
     }
   }
 
