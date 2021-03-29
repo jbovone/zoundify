@@ -1,7 +1,8 @@
-export const flex = (js, ai) => ({
+export const flex = (js, ai, direction) => ({
   display: "flex",
   alignItems: ai || "center",
   justifyContent: js || "center",
+  flexDirection: direction ? direction : "row",
 });
 
 export function getComputedHeight(element) {

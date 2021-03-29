@@ -6,6 +6,7 @@ import ButtonIcon from "./ButtonIcon";
 import Lead from "../components/normalizers/typography/lead";
 import { asideNavigation as svgs } from "./svg/customs";
 import { palette } from "../theme/colors";
+import { flex } from "../helpers";
 
 const { Browse, Home, Plus, Radio } = svgs;
 const mainNav = [
@@ -29,24 +30,28 @@ const mainNav = [
 
 const AsideNavigator = ({ show = true, setWidth }) => {
   const style = css({
+    ...flex("flex-start", "flex-start", "column"),
     position: "relative",
+    padding: 5,
+    justifyContent: "space-between",
     gridArea: "as1",
     background: palette.backgroundBody,
     transition: "ease-in-out 0.4s",
     opacity: show ? 1 : 0,
-    overflowY: "scroll",
     transform: !show && "translate(-100%)",
+    flex: 1,
     zIndex: 1000,
     "&>*": {
-      margin: "35px 7px",
+      ...flex("flex-start", "flex-start", "column"),
     },
     section: {
       "&>*": {
-        margin: "12px 17px",
-        padding: "2px 0",
+        margin: ".3em .5em",
       },
     },
-    ".playlist-btn": {
+  });
+  const playListStyle = css({
+    button: {
       marginTop: "100%",
       padding: "12px 20px",
       borderTop: `solid 1px ${palette.backgroundMain}`,
@@ -99,7 +104,7 @@ const AsideNavigator = ({ show = true, setWidth }) => {
         ))}
       </section>
 
-      <section>
+      <section className={playListStyle}>
         <Lead className="title">Playlists</Lead>
         <ButtonIcon
           className="playlist-btn"
