@@ -6,8 +6,6 @@ const Main = ({ children, rAsideWidth, lAsideWidth }) => {
   const style = css({
     width: "100vw",
     height: "100vh",
-    maxHeight: "100vh",
-    minHeight: "100vh",
     display: "grid",
     background: palette.backgroundBody,
     gridTemplateColumns: `${lAsideWidth}px 1fr ${rAsideWidth}px`,

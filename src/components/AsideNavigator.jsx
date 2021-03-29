@@ -34,6 +34,7 @@ const AsideNavigator = ({ show = true, setWidth }) => {
     background: palette.backgroundBody,
     transition: "ease-in-out 0.4s",
     opacity: show ? 1 : 0,
+    overflowY: "scroll",
     transform: !show && "translate(-100%)",
     zIndex: 1000,
     "&>*": {
@@ -46,8 +47,7 @@ const AsideNavigator = ({ show = true, setWidth }) => {
       },
     },
     ".playlist-btn": {
-      position: "absolute",
-      bottom: 0,
+      marginTop: "100%",
       padding: "12px 20px",
       borderTop: `solid 1px ${palette.backgroundMain}`,
     },
